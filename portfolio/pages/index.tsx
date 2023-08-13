@@ -37,7 +37,7 @@ type Props = {
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
   const [active, setActive] = useState('#')
   return (
-    <div style={{backgroundImage:`url(${"https://www.transparenttextures.com/patterns/football-no-lines.png"})`}} className="bg-[rgb(17,17,17)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scroll-smooth sm:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#AFAFDB]/60">
+    <div style={{backgroundImage:`url(${"https://www.transparenttextures.com/patterns/football-no-lines.png"})`}} className="bg-[rgb(26,26,26)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scroll-smooth sm:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#AFAFDB]/60">
       <Head>
         <title>{`${pageInfo?.name} - Portfolio`}</title>
       </Head>
