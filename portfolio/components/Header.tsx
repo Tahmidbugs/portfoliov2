@@ -4,6 +4,7 @@ import { SocialIcon } from 'react-social-icons'
 import {motion} from 'framer-motion'
 import Link from 'next/link'
 import { Social } from '@/typings'
+import {FaDownload} from 'react-icons/fa'
 
 type Props = {
   socials: Social[]
@@ -51,12 +52,12 @@ export default function Header({socials}: Props) {
         
         
         className='flex flex-row items-center text-gray-300 cursor-pointer'>
-            <SocialIcon className="cursor-pointer"
-            network='email'
-            fgColor="gray"
-            bgColor="transparent"
+            <FaDownload className="cursor-pointer"
+            color="gray"
+            size={20}
+            style={{marginRight:5}}
             />
-            <p className='uppercase hidden md:inline-flex text-sm text-gray-400'><Link href="#contact">Get in Touch</Link></p>
+            <p className='uppercase hidden md:inline-flex text-sm text-gray-400'><Link href='/resume.pdf' download={"resume.pdf"}>Download Resume</Link></p>
         </motion.div>
        
         </header>

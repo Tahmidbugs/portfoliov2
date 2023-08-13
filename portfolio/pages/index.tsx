@@ -14,7 +14,17 @@ import { fetchExperiences } from "../utils/fetchExperiences";
 import { fetchSkills } from "../utils/fetchSkills";
 import { fetchProjects } from "../utils/fetchProjects";
 import { fetchSocial } from "../utils/fetchSocials";
-import Nav from "@/components/Nav";
+
+import React from 'react'
+
+import {AiOutlineHome} from 'react-icons/ai'
+import {AiOutlineUser} from 'react-icons/ai'
+import {BiBook} from 'react-icons/bi'
+import {RiServiceLine} from 'react-icons/ri'
+import {BiMessageSquareDetail} from 'react-icons/bi'
+import {MdOutlineLeaderboard} from 'react-icons/md'
+import { useState } from 'react'
+
 
 type Props = {
   pageInfo: PageInfo;
@@ -25,8 +35,9 @@ type Props = {
 };
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+  const [active, setActive] = useState('#')
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scroll-smooth sm:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#332B3A]/60">
+    <div style={{backgroundImage:`url(${"https://www.transparenttextures.com/patterns/football-no-lines.png"})`}} className="bg-[rgb(17,17,17)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scroll-smooth sm:scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#AFAFDB]/60">
       <Head>
         <title>{`${pageInfo?.name} - Portfolio`}</title>
       </Head>
@@ -57,7 +68,16 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <ContactMe />
       </section>
 
-    <Nav/>
+      <div>
+     <nav>
+      <a href="#hero" onClick={()=>setActive('#')} className={active==='#'?'active':''}><AiOutlineHome/></a>
+      <a href="#about" onClick={()=>setActive('#about')}className={active==='#about'?'active':''}><AiOutlineUser/></a>
+      <a href="#experience" onClick={()=>setActive('#experience')} className={active==='#experience'?'active':''}><BiBook/></a>
+      <a href="#skills" onClick={()=>setActive('#clubs')} className={active==='#clubs'?'active':''}><MdOutlineLeaderboard/></a>
+      <a href="#projects" onClick={()=>setActive('#projects')} className={active==='#projects'?'active':''}><RiServiceLine/></a>      
+      <a href="#contact" onClick={()=>setActive('#contact')}className={active==='#contact'?'active':''}><BiMessageSquareDetail/></a>
+     </nav>
+     </div>
     </div>
   );
 };

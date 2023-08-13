@@ -40,7 +40,7 @@ export default function About({ pageInfo }: Props) {
       >
         <h4 className="text-2xl sm:text-4xl font-semibold">
           Here is a{" "}
-          <span className="underline decoration-[#332B3A]/50">little</span>{" "}
+          <span className="underline decoration-[#AFAFDB]">little</span>{" "}
           background
         </h4>
 
