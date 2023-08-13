@@ -1,6 +1,6 @@
 import blockContent from './blockContent'
 import category from './category'
-import pageInfo from './pageInfo'
+import pageInfo from './PageInfo'
 import experience from './experience'
 import social from './social'
 import skill from './skill'

@@ -13,6 +13,15 @@ interface Image {
   };
 }
 
+interface Resume {
+  _type: "file";
+  asset: {
+    _ref: string;
+    _type: "reference";
+  };
+}
+
+
 export interface PageInfo extends SanityBody {
   _type: "pageInfo";
   address: string;
@@ -23,7 +32,11 @@ export interface PageInfo extends SanityBody {
   name: string;
   phoneNumber: string;
   profilePic: Image;
+  socials: Social[];
+  resume: Resume;
 }
+
+
 
 export interface Technology extends SanityBody {
   _type: "skill";

@@ -3,14 +3,16 @@ import { SocialIcon } from 'react-social-icons'
 
 import {motion} from 'framer-motion'
 import Link from 'next/link'
-import { Social } from '@/typings'
+import { Resume, Social } from '@/typings'
 import {FaDownload} from 'react-icons/fa'
+import { urlFor } from '@/sanity'
 
 type Props = {
-  socials: Social[]
+  socials: Social[],
+  resume: Resume
 }
 
-export default function Header({socials}: Props) {
+export default function Header({socials, resume}: Props) {
   return (
     <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center'
     ><motion.div initial={{
@@ -57,7 +59,7 @@ export default function Header({socials}: Props) {
             size={20}
             style={{marginRight:5}}
             />
-            <p className='uppercase hidden md:inline-flex text-sm text-gray-400'><Link href='/resume.pdf' download={"resume.pdf"}>Download Resume</Link></p>
+            <p className='uppercase hidden md:inline-flex text-sm text-gray-400'><Link href={`${resume?.asset}`} download={"resume.pdf"}>Download Resume</Link></p>
         </motion.div>
        
         </header>
